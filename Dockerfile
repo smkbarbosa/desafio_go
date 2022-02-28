@@ -4,7 +4,7 @@ WORKDIR $GOPATH/go/src/app
 
 COPY fullcycle.go .
 
-RUN CGO_ENABLE=0 go build -o /app fullcycle.go
+RUN CGO_ENABLE=0 go build -o /app -ldflags "-w" fullcycle.go
 
 FROM scratch
 
